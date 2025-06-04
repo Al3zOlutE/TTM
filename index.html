@@ -17,19 +17,19 @@
 </head>
 <body>
 
-  <h1>ข้อมูลจาก Google Apps Script</h1>
+  <h1>Traffic Ticket Payment</h1>
   <pre id="result">กำลังโหลด...</pre>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxSu0W8iD5p2cuiBtUucx8BQb4sCD5XClvis69UgHjOqwzTrU9qab-EBx59_CRXbUXR_w/exec'; // 👉 ใส่ลิงก์ของคุณ
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxSu0W8iD5p2cuiBtUucx8BQb4sCD5XClvis69UgHjOqwzTrU9qab-EBx59_CRXbUXR_w/exec?mode=api'; // 👉 ใส่ลิงก์ของคุณ
 
-    fetch(scriptURL)
-      .then(response => response.json())
+    fetch(url)
+      .then(res => res.json())
       .then(data => {
-        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+        console.log("รับข้อมูลจาก GAS:", data);
       })
-      .catch(error => {
-        document.getElementById('result').textContent = "เกิดข้อผิดพลาด: " + error;
+      .catch(err => {
+        console.error("เกิดข้อผิดพลาด:", err);
       });
   </script>
 
