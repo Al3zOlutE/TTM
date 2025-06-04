@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <base target="_top">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traffic Ticket Management</title>
+  <meta charset="UTF-8">
+  <title>เชื่อมต่อกับ Google Apps Script</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-    <iframe style="width: 100%; height: 100vh;" scrolling="yes" src="https://script.google.com/macros/s/AKfycbxSu0W8iD5p2cuiBtUucx8BQb4sCD5XClvis69UgHjOqwzTrU9qab-EBx59_CRXbUXR_w/exec" frameborder="0"></iframe>
+
+  <h1>ข้อมูลจาก Google Apps Script</h1>
+  <pre id="result">กำลังโหลด...</pre>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxSu0W8iD5p2cuiBtUucx8BQb4sCD5XClvis69UgHjOqwzTrU9qab-EBx59_CRXbUXR_w/exec'; // 👉 ใส่ลิงก์ของคุณ
+
+    fetch(scriptURL)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        document.getElementById('result').textContent = "เกิดข้อผิดพลาด: " + error;
+      });
+  </script>
+
 </body>
 </html>
