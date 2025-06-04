@@ -1,37 +1,15 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>Traffic Ticket Payment</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2rem;
-    }
-    pre {
-      background: #f4f4f4;
-      padding: 1rem;
-      border-radius: 5px;
-    }
-  </style>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Ticket Payment</title>
 </head>
 <body>
-
-  <h1>Traffic Ticket Payment</h1>
-  <pre id="result">กำลังโหลด...</pre>
-
-  <script>
-    const url = 'https://script.google.com/macros/s/AKfycbxSu0W8iD5p2cuiBtUucx8BQb4sCD5XClvis69UgHjOqwzTrU9qab-EBx59_CRXbUXR_w/exec?mode=api'; // 👉 ใส่ลิงก์ของคุณ
-
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        console.log("รับข้อมูลจาก GAS:", data);
-      })
-      .catch(err => {
-        console.error("เกิดข้อผิดพลาด:", err);
-      });
-  </script>
-
+    <iframe style="border: none;" src="https://script.google.com/macros/s/AKfycbxSu0W8iD5p2cuiBtUucx8BQb4sCD5XClvis69UgHjOqwzTrU9qab-EBx59_CRXbUXR_w/exec"></iframe>
 </body>
 </html>
+
